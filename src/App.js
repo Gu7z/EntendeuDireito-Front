@@ -18,7 +18,7 @@ function App() {
     },
     {
       card_title: 'Entendeu',
-      card_subTitle: ['Acesso ilimitado a mais de 1500 esquemas mentais!', 'Estude Offline com download de materiais!', 'Imprima para estudar onde quiser!', 'Suporte via WhatsApp'],
+      card_subTitle: ['Acesso ilimitado a mais de 1500 esquemas mentais!', 'Estude offline com download de materiais!', 'Imprima para estudar onde quiser!', 'Suporte via WhatsApp'],
       card_price: '79,90'
     }
   ]
@@ -42,7 +42,7 @@ function App() {
 
         <button className="a1">
 
-          Planos
+          Planos Mensais
 
         </button>
 

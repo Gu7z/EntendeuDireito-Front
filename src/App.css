@@ -24,9 +24,33 @@
   background-image: url('./components/img/banner.jpg');
 }
 
+#title{
+  width: 100%;
+  height: 30%;
+  margin-bottom: 25px;
+  padding: 3rem 0 1rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#title strong{
+  color: #EA5412;
+}
+
 #home_title{
   font-size: 45;
+  padding: 0 30%;
   font-weight: bold;
+}
+
+
+#home_subtitle{
+  font-size: 25px;
+  padding: 0 20%;
+  font-family: Verdana, sans-serif;
 }
 
 #footer{
@@ -46,23 +70,6 @@
 
 .a1:hover{
   background: #FF9061;
-}
-
-#home_subtitle{
-  font-size: 25px;
-  font-family: Verdana, sans-serif;
-}
-
-#title{
-  width: 100%;
-  height: 30%;
-  margin-bottom: 25px;
-  padding: 3rem 22% 1rem 22%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
 }
 
 #logo{
