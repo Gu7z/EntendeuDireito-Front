@@ -40,7 +40,7 @@ function App() {
           </Route>
 
           <Route path="/">
-            <Nav></Nav>
+            testando
           </Route>
 
         </Switch>
