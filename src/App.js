@@ -13,12 +13,12 @@ function App() {
     },
     {
       card_title: 'OAB',
-      card_subTitle: ['Acesso ilimitado a mais de 1500 esquemas mentais', 'Suporte via WhatsApp', 'Estude Online'],
+      card_subTitle: ['Acesso ilimitado a mais de 1500 esquemas mentais', 'Suporte via WhatsApp', 'Estude Online', 'Conteudo Exclusivo OAB'],
       card_price: '29,90'
     },
     {
       card_title: 'Entendeu',
-      card_subTitle: ['Acesso ilimitado a mais de 1500 esquemas mentais', 'Suporte via WhatsApp', 'Estude Online + Download!'],
+      card_subTitle: ['Acesso ilimitado a mais de 1500 esquemas mentais', 'Estude Offline com download de materiais', 'Imprima para estudar on de quiser', 'Suporte via WhatsApp'],
       card_price: '79,90'
     }
   ]

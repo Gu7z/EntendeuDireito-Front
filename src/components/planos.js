@@ -23,7 +23,7 @@ export default function Planos({ planos, setLoaded }) {
                             
                             <RenderSubtitles subtitles={plano.card_subTitle} ></RenderSubtitles>
 
-                            <h3 style={{ width: '75%', color: 'White', borderRadius: 5, backgroundColor: '#EA5412' }} >{plano.card_price}</h3>
+                            <h3 style={{ width: '75%', color: 'White', backgroundColor: '#EA5412' }} >{plano.card_price}</h3>
                             <br />
                             <button style={{ width: '100%', fontSize: '20px' }} className="btn btn-success">Assinar Agora!</button>
 
