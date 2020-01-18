@@ -117,6 +117,10 @@
   border: 0;
 }
 
+#card-texts:hover{
+  background: #d3d3d3;
+}
+
 #card{
   display: flex;
   align-items: center;
