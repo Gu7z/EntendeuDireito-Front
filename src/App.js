@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Nav from './components/nav'
-import Title from './components/title'
 import Planos from './components/planos'
+import Footer from './components/footer'
 import './App.css';
 
 function App() {
@@ -27,32 +28,9 @@ function App() {
     <div className="App">
       <Nav></Nav>
       <div className="main">
-        <Title></Title>
-        <section id="cards">
-          <Planos planos={planos}></Planos>
-        </section>
+        <Planos planos={planos} ></Planos>
       </div>
-      <footer id="footer">
-
-        <button className="a1">
-
-          Sobre
-
-        </button>
-
-        <button className="a1">
-
-          Planos Mensais
-
-        </button>
-
-        <button className="a1">
-          
-          Fale Conosco
-        
-        </button>
-
-      </footer>
+      <Footer></Footer>
     </div>
   );
 }
