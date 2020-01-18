@@ -9,6 +9,7 @@
 }
 
 .navbar{
+  position: sticky;
   top: 0;
   z-index: 1;
   display: flex;
@@ -20,6 +21,7 @@
   flex-direction: column;
   width: 100%;
   flex-grow: 1;
+  padding-bottom: 50px;
   background-size: cover;
   background-image: url('./components/img/banner.jpg');
 }
@@ -42,7 +44,7 @@
 
 #home_title{
   font-size: 45;
-  padding: 0 30%;
+  padding: 0 2vh;
   font-weight: bold;
 }
 
