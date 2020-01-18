@@ -5,23 +5,17 @@ export default function Footer(){
     return(
         <footer id="footer">
 
-            <button className="a1">
-                <Link to="/">
-                    Sobre
-                </Link>
-            </button>
+            <Link className="link link_button" to="/">
+                Sobre
+            </Link>
 
-            <button className="a1">
-                <Link to="/planos">
-                    Planos Mensais            
-                </Link>
-            </button>
-
-            <button className="a1">   
-                <Link to="/contato">
-                    Fale Conosco     
-                </Link>
-            </button>
+            <Link className="link link_button" to="/planos">
+                Planos Mensais            
+            </Link>
+ 
+            <Link className="link link_button" to="/sobre">
+                Fale Conosco     
+            </Link>
 
       </footer>
     )

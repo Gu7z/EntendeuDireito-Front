@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import Nav from './components/nav'
 import Planos from './components/planos'
 import Footer from './components/footer'
+import Sobre from './components/sobre'
 import './App.css';
 
 function App() {
@@ -28,7 +29,21 @@ function App() {
     <div className="App">
       <Nav></Nav>
       <div className="main">
-        <Planos planos={planos} ></Planos>
+        <Switch>
+
+          <Route path="/sobre">
+            <Sobre></Sobre>
+          </Route>
+
+          <Route path="/planos">
+            <Planos planos={planos} ></Planos>
+          </Route>
+
+          <Route path="/">
+            <Nav></Nav>
+          </Route>
+
+        </Switch>
       </div>
       <Footer></Footer>
     </div>
