@@ -1,38 +1,119 @@
 .App {
+  max-width: 100vw;
+  max-height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-height: 100vh;
+}
+
+.navbar{
+  top: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: space-around;
+}
+
+.main{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-size: cover;
+  background-image: url('./components/img/banner.jpg');
+}
+
+#home_title{
+  font-size: 45;
+  font-weight: bold;
+}
+
+#footer{
+  display: flex;
+  align-items: flex-end;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.a1{
+  border-radius: 10px;
+  border: solid #f8f9fa;
+  background: #EA5412;
+  width: 100%;
+  height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.a1:hover{
+  background: #FF9061;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#home_subtitle{
+  font-size: 25px;
+  font-family: Verdana, sans-serif;
+}
+
+#title{
+  width: 100%;
+  height: 30%;
+  margin-bottom: 100px;
+  padding: 5rem 22% 1rem 22%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#logo{
+  width: 50%;
+  height: 2rem;
+}
+
+#logo_img{
+  max-height: 100%;
+}
+
+.btn-login{
+  outline: 0 !important;
+  color: #EA5412;
+  border-color: #EA5412;
+}
+
+.btn-login:hover{
+  color: white;
+  background-color: #EA5412;
+  border-color: #EA5412;
+}
+
+.card-content{
+  max-width: 18rem;
+  border-radius: 25px;
+}
+
+#card-title{
+  background-color: #EA5412;
+  border-radius: 50px;
+}
+
+#card-texts{
+  color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#cards{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#card{
+  text-align: center;
+}
+
+@media (max-width:1024px){
+  #title{
+    padding: 1rem 0% 1rem 0%;
+    margin-bottom: 25px;
+  }  
 }
