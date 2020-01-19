@@ -55,15 +55,19 @@
   font-family: Verdana, sans-serif;
 }
 
+.button:hover{
+  cursor: pointer;
+}
+
 #footer{
-  position: fixed;
-  bottom: 0;
+  position: sticky;
   width: 100%;
   max-width: 100vw;
   display: flex;
+  flex-direction: column;
   align-items: flex-end;
   text-align: center;
-  height: 62.5px;
+  height: 100%;
 }
 
 .link_button{
@@ -76,6 +80,10 @@
   width: 100%;
   height: 100%;
   color: white
+}
+
+.link_button:hover{
+  background: #FF9061;
 }
 
 a.link{
@@ -149,8 +157,12 @@ a.link{
     margin-bottom: 100px;
   }  
 
+  #home_subtitle{
+    padding: 0;
+  }
+
   #logo{
-    width: 50%;
+    justify-content: space-between;
   }
 }
 

@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Switch, Route } from "react-router-dom";
 import Nav from './components/nav'
 import Planos from './components/planos'
-import Footer from './components/footer'
+import Footer from './components/sideButtons'
 import Sobre from './components/sobre'
+import SideBar from './components/sideBar'
 import './App.css';
 
 function App() {
@@ -25,9 +26,12 @@ function App() {
     }
   ]
 
+  const [isOpen, setOpen] = useState(false)
+
   return (
     <div className="App">
-      <Nav></Nav>
+      <Nav isOpen={isOpen} setOpen={setOpen}></Nav>
+      <SideBar isOpen={isOpen} setOpen={setOpen}></SideBar>
       <div className="main">
         <Switch>
 
@@ -45,7 +49,6 @@ function App() {
 
         </Switch>
       </div>
-      <Footer></Footer>
     </div>
   );
 }
