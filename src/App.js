@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
 import { Switch, Route } from "react-router-dom";
 import Nav from './components/nav'
-import Planos from './components/planos'
-import Footer from './components/sideButtons'
-import Sobre from './components/sobre'
-import SideBar from './components/sideBar'
+import Planos from './components/planos/planos'
+import Home from './components/home/home'
+import SideBar from './components/sidebar/sideBar'
 import './App.css';
+
+import {
+  BrowserView,
+  MobileView,
+  isBrowser,
+  isMobile
+} from "react-device-detect";
 
 function App() {
   const planos = [
@@ -30,24 +36,32 @@ function App() {
 
   return (
     <div className="App">
-      <Nav isOpen={isOpen} setOpen={setOpen}></Nav>
-      <SideBar isOpen={isOpen} setOpen={setOpen}></SideBar>
+      <Nav isMobile={isMobile} isOpen={isOpen} setOpen={setOpen}></Nav>
       <div className="main">
-        <Switch>
-
-          <Route path="/sobre">
-            <Sobre></Sobre>
-          </Route>
-
-          <Route path="/planos">
+        <BrowserView>
+            <Home></Home>
             <Planos planos={planos} ></Planos>
-          </Route>
+        </BrowserView>
 
-          <Route path="/">
-            testando
-          </Route>
+        <MobileView>
+          <SideBar isOpen={isOpen} setOpen={setOpen}></SideBar>
+          
+            <Switch>
 
-        </Switch>
+              <Route path="/contato">
+                testando
+              </Route>
+
+              <Route path="/planos">
+                <Planos planos={planos} ></Planos>
+              </Route>
+
+              <Route path="/">
+                  <Home></Home>
+              </Route>
+
+            </Switch>
+        </MobileView>
       </div>
     </div>
   );

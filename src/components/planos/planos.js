@@ -1,7 +1,7 @@
 import React from 'react'
 import Title from './title'
 import Planos_Cards from './planos_cards'
-import FadeIn from 'react-fade-in';
+import FadeIn from 'react-fade-in'
 
 export default function Planos({planos}){
     return(

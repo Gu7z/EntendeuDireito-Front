@@ -13,7 +13,7 @@ export default function Footer(){
                 Planos Mensais            
             </Link>
  
-            <Link className="link link_button" to="/sobre">
+            <Link className="link link_button" to="/contato">
                 Fale Conosco     
             </Link>
 
