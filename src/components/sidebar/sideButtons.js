@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Footer(){
     return(
-        <footer id="footer">
+        <footer id="sideButton">
 
             <Link className="link link_button" to="/">
                 Sobre

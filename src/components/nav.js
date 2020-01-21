@@ -17,17 +17,10 @@ export default function Nav({isOpen, setOpen, isMobile}){
                 <PersonIcon style={{color: '#EA5412'}} textAnchor='Login'></PersonIcon>
             </div>
             
-            {
-                isMobile ?
-                (
-                    <div className="button" onClick={ ()=>{setOpen(!isOpen)} } style={{color: 'black', display: 'flex', flexDirection: 'row'}}>
-                        <div>Menu</div>
-                        <MenuIcon style={{color: '#EA5412'}} textAnchor='Login'></MenuIcon>
-                    </div>
-                ):null
-            }
-
-            
+            <div className="button" onClick={ ()=>{setOpen(!isOpen)} } style={{color: 'black', display: 'flex', flexDirection: 'row'}}>
+                <div>Menu</div>
+                <MenuIcon style={{color: '#EA5412'}} textAnchor='Login'></MenuIcon>
+            </div>            
 
         </nav>
     )

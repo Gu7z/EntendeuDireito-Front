@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Switch, Route } from "react-router-dom";
 import Nav from './components/nav'
-import Planos from './components/planos/planos'
+import Planos_Cards from './components/planos/planos_cards'
 import Home from './components/home/home'
 import SideBar from './components/sidebar/sideBar'
+import DefaultPage from './components/defaultPage'
 import './App.css';
 
 import {
@@ -34,16 +35,19 @@ function App() {
 
   const [isOpen, setOpen] = useState(false)
 
+  var clss;
+
+  if (isMobile) {
+    clss = 'main_mobile' 
+  }else{
+    clss= 'main_mobile'
+  }
+
   return (
     <div className="App">
       <Nav isMobile={isMobile} isOpen={isOpen} setOpen={setOpen}></Nav>
-      <div className="main">
-        <BrowserView>
-            <Home></Home>
-            <Planos planos={planos} ></Planos>
-        </BrowserView>
+      <div className={clss}>
 
-        <MobileView>
           <SideBar isOpen={isOpen} setOpen={setOpen}></SideBar>
           
             <Switch>
@@ -53,15 +57,23 @@ function App() {
               </Route>
 
               <Route path="/planos">
-                <Planos planos={planos} ></Planos>
+              <DefaultPage 
+                  title={ <> Conheça nossos planos e  <strong> reinvente </strong> seu <strong> método </strong> de estudar! </> } 
+                  subtitle={<> Planos <strong>mensais</strong> com os melhores preços para <strong>você</strong>  que precisa de uma <strong>ajudinha</strong> na hora de revisar aquele <strong>conteúdo importante</strong>. </>} 
+                  comp={<Planos_Cards isMobile={isMobile} planos={planos}></Planos_Cards>} 
+                ></DefaultPage>
               </Route>
 
               <Route path="/">
-                  <Home></Home>
+                <DefaultPage 
+                  title={'Aprenda tudo sobre conteúdo jurídico em minutos'} 
+                  subtitle={'Aprenda tudo sobre conteúdo jurídico em minutos. Potencialize seu ensino e aprenda 45% mais com o nosso material ilustrativo que fala a língua que seu cérebro entende.'} 
+                  comp={<Home></Home>} 
+                ></DefaultPage>
               </Route>
 
             </Switch>
-        </MobileView>
+
       </div>
     </div>
   );

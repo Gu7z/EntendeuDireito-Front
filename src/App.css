@@ -16,12 +16,39 @@
   justify-content: space-around;
 }
 
+#logo{
+  width: 50%;
+  height: 2rem;
+}
+
+#logo_img{
+  max-height: 100%;
+}
+
+.btn-login{
+  outline: 0 !important;
+  color: #EA5412;
+  border-color: #EA5412;
+}
+
+.button:hover{
+  cursor: pointer;
+}
+
 .main{
   display: flex;
   flex-direction: column;
   width: 100%;
   flex-grow: 1;
   padding-bottom: 50px;
+  background: black;
+}
+
+.main_mobile{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex-grow: 1;
   background-size: cover;
   background-image: url('./components/img/banner.jpg');
 }
@@ -37,7 +64,7 @@
   text-align: center;
 }
 
-#title strong{
+strong{
   color: #EA5412;
 }
 
@@ -47,18 +74,13 @@
   font-weight: bold;
 }
 
-
 #home_subtitle{
   font-size: 25px;
   padding: 0 20%;
   font-family: Verdana, sans-serif;
 }
 
-.button:hover{
-  cursor: pointer;
-}
-
-#footer{
+#sideButton{
   position: sticky;
   width: 100%;
   max-width: 100vw;
@@ -88,31 +110,6 @@
 a.link{
   color:white;
   text-decoration: none;
-}
-
-.a1:hover{
-  background: #FF9061;
-}
-
-#logo{
-  width: 50%;
-  height: 2rem;
-}
-
-#logo_img{
-  max-height: 100%;
-}
-
-.btn-login{
-  outline: 0 !important;
-  color: #EA5412;
-  border-color: #EA5412;
-}
-
-.btn-login:hover{
-  color: white;
-  background-color: #EA5412;
-  border-color: #EA5412;
 }
 
 .card-content{
@@ -169,4 +166,46 @@ a.link{
   #logo{
     width: 100%;
   }
+}
+
+@media (max-width: 650px){
+  #apresentation{
+    flex-wrap: wrap;
+  }
+}
+
+#home{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ }
+
+#apresentation{
+  width: 100vw;
+  height: fit-content;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.ap_content{
+  height: 400px;
+  max-height: 400px;
+  background: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 50px;
+}
+
+.defaultMain{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
 }

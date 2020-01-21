@@ -36,7 +36,7 @@ export default function Planos({ planos, setLoaded }) {
     }
 
     return (
-        <>
+        <section id="cards">
             {
                 planos ?
                     (
@@ -45,7 +45,7 @@ export default function Planos({ planos, setLoaded }) {
                     :
                     (null)
             }
-        </>
+        </section>
     )
 }
 
