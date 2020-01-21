@@ -2,8 +2,9 @@ import React from 'react'
 import logo from './img/logo.png'
 import PersonIcon from '@material-ui/icons/Person';
 import MenuIcon from '@material-ui/icons/Menu';
+import { Link } from "react-router-dom";
 
-export default function Nav({ isOpen, setOpen, isMobile }) {
+export default function Nav({ isOpen, setOpen, isMobile, setOverlay }) {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div id="logo" href="/">
@@ -12,10 +13,12 @@ export default function Nav({ isOpen, setOpen, isMobile }) {
                 </img>
             </div>
 
-            <div className="button" style={{ color: 'black', display: 'flex', flexDirection: 'row' }}>
-                <div>Login</div>
-                <PersonIcon style={{ color: '#EA5412' }} textAnchor='Login'></PersonIcon>
-            </div>
+            <Link className="link" to='/login' onClick={()=>setOverlay(true)} >
+                <div className="button" style={{ color: 'black', display: 'flex', flexDirection: 'row' }}>
+                    <div>Login</div>
+                    <PersonIcon style={{ color: '#EA5412' }} textAnchor='Login'></PersonIcon>
+                </div>
+            </Link>
 
             {isMobile ?
                 (

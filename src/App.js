@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Switch, Route } from "react-router-dom";
 import Nav from './components/nav'
 
@@ -7,6 +7,7 @@ import DefaultPage from './components/defaultPage'
 import PlanosCards from './components/planos_cards'
 import Home from './components/home'
 import Contato from './components/contato'
+import Login from './components/login'
 
 import SideBar from './components/sidebar/sideBar'
 import './App.css';
@@ -37,6 +38,7 @@ function App() {
   ]
 
   const [isOpen, setOpen] = useState(false)
+  const [isOverlayed, setOverlay] = useState(true)
 
   var clss;
 
@@ -101,19 +103,31 @@ function App() {
     )
   }
 
+  const RenderLogin = () => {
+    return(
+      <DefaultPage
+        class='Login'
+        comp={ <Login isOverlayed={isOverlayed} setOverlay={setOverlay} ></Login> }
+      ></DefaultPage>
+    )
+  }
+
   return (
     <div className="App">
-      <Nav isMobile={isMobile} isOpen={isOpen} setOpen={setOpen}></Nav>
+      <Nav isMobile={isMobile} isOpen={isOpen} setOpen={setOpen} setOverlay={setOverlay} ></Nav>
       <div className={clss}>
 
         <BrowserView>
           <RenderHome></RenderHome>
           <RenderPlanos></RenderPlanos>
           <RenderContato></RenderContato>
+          {isOverlayed ? (<RenderLogin></RenderLogin>) : null }
         </BrowserView>
 
         <MobileView>
           <SideBar isOpen={isOpen} setOpen={setOpen}></SideBar>
+
+          {isOverlayed ? (<RenderLogin></RenderLogin>) : null }
 
           <Switch>
 

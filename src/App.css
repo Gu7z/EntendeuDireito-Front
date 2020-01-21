@@ -230,3 +230,9 @@ a.link{
 .background2{
   background: black;  
 }
+
+.Login{
+  padding: 0;
+  max-height: 0;
+}
+
