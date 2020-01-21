@@ -59,7 +59,6 @@ function App() {
   const RenderPlanos = () => {
     return (
       <DefaultPage
-        class='background2'
         title={
           <>
             Conheça nossos planos e  <strong> reinvente </strong> seu <strong> método </strong> de estudar!
@@ -82,6 +81,7 @@ function App() {
   const RenderContato = () => {
     return (
       <DefaultPage
+        class='background2'
         title={<strong>Fale conosco!</strong>}
         subtitle={
           <>

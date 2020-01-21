@@ -6,6 +6,7 @@ import DefaultPage from './components/defaultPage'
 
 import PlanosCards from './components/planos_cards'
 import Home from './components/home'
+import Login from './components/login'
 import Contato from './components/contato'
 
 import SideBar from './components/sidebar/sideBar'
@@ -99,6 +100,17 @@ function App() {
     )
   }
 
+  const RenderLogin = () => {
+    return(
+      <DefaultPage
+        title={
+          <strong style={{color: 'black'}} >Login | Cadastre-se</strong>
+        }
+        comp={ <Login></Login> }
+      ></DefaultPage>
+    )
+  }
+
   return (
     <div className="App">
       <Nav isMobile={true} isOpen={isOpen} setOpen={setOpen}></Nav>
@@ -110,6 +122,10 @@ function App() {
 
             <Route path="/contato">
               <RenderContato></RenderContato>
+            </Route>
+
+            <Route path="/login">
+              <RenderLogin></RenderLogin>
             </Route>
 
             <Route path="/planos">

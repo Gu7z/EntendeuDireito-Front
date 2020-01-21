@@ -12,7 +12,7 @@ export default function Contato() {
                     <label htmlFor="exampleFormControlTextarea1">Sua Mensagem</label>
                     <textarea className="form-control" id="exampleFormControlTextarea1" placeholder="Seja Cordeal!" rows="3"></textarea>
                 </div>
-                <button className="btn" style={{background: '#EA5412', borderRadius: 15}}>Enviar!</button>
+                <button className="btn" style={{background: '#EA5412', borderRadius: 15, marginBottom: 100}}>Enviar!</button>
             </form>
         </div>
     )
