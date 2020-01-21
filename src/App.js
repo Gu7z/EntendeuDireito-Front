@@ -90,10 +90,10 @@ function App() {
         }
         subtitle={
           <>
-            Planos <strong>mensais</strong>
-            com os melhores preços para <strong>você</strong>
-            que precisa de uma <strong>ajudinha</strong> na hora de revisar aquele
-            <strong>conteúdo importante</strong>.
+            Planos <strong>mensais </strong>
+            com os melhores preços para <strong>você </strong>
+            que precisa de uma <strong>ajudinha </strong> na hora de revisar aquele
+            <strong> conteúdo importante</strong>.
           </>
         }
         comp={<Planos_Cards isMobile={isMobile} planos={planos}></Planos_Cards>

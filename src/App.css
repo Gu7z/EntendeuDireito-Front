@@ -149,6 +149,10 @@ a.link{
   text-align: center;
 }
 
+.form_contact{
+  width: 90%;
+}
+
 @media (max-width:1024px){
   #title{
     margin-bottom: 50px;
@@ -160,10 +164,6 @@ a.link{
 
   #logo{
     justify-content: space-between;
-  }
-
-  .form_contact{
-    width: 90%;
   }
 }
 
@@ -224,8 +224,4 @@ a.link{
   text-align: center;
   flex-direction: column;
   padding-top: 2rem;
-}
-
-.form_contact{
-  width: 50%;
 }
