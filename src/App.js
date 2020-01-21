@@ -47,28 +47,6 @@ function App() {
     clss = 'main'
   }
 
-  const RenderContato = () => {
-    return (
-      <DefaultPage
-        title={'Fale conosco!'}
-        subtitle={
-          <>
-            <br />Gostariamos de estar mais perto de você, nosso <strong>parceiro</strong>.
-                    <br />
-            <small>
-              A Entendeu preza pelo seu feedback, tudo que for falado aqui será levado
-              em consideração para melhorarmos!
-                      <br />
-              <strong>Eae Entendeu direito? ;D </strong>
-            </small>
-            <br /><br />
-          </>
-        }
-        comp={<Contato></Contato>}
-      ></DefaultPage>
-    )
-  }
-
   const RenderHome = () => {
     return (
       <DefaultPage
@@ -98,6 +76,29 @@ function App() {
         }
         comp={<Planos_Cards isMobile={isMobile} planos={planos}></Planos_Cards>
         }
+      ></DefaultPage>
+    )
+  }
+
+
+  const RenderContato = () => {
+    return (
+      <DefaultPage
+        title={<strong>Fale conosco!</strong>}
+        subtitle={
+          <>
+            <br />Gostariamos de estar mais perto de você, nosso <strong>parceiro</strong>.
+            <br />
+            <small>
+              A Entendeu preza pelo seu feedback, tudo que for falado aqui será levado
+              em consideração para melhorarmos!
+              <br />
+              <strong>Eae Entendeu direito? ;D </strong>
+            </small>
+            <br /><br />
+          </>
+        }
+        comp={<Contato></Contato>}
       ></DefaultPage>
     )
   }
