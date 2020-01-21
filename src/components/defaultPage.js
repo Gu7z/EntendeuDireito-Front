@@ -3,8 +3,7 @@ import FadeIn from 'react-fade-in'
 
 export default function Default(props){
     return(
-        <FadeIn>
-            <div className = "defaultMain">
+            <div className = {'defaultMain ' + props.class}>
                 <div className = "titles">
                     <h1 id="home_title">
                         {props.title}
@@ -15,6 +14,5 @@ export default function Default(props){
                 </div>
                 {props.comp}
             </div>
-        </FadeIn>
     )
 }

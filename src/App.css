@@ -131,6 +131,7 @@ a.link{
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .card{
@@ -160,6 +161,16 @@ a.link{
   #logo{
     justify-content: space-between;
   }
+
+  .form_contact{
+    width: 90%;
+  }
+}
+
+@media(min-width:1024px){
+  .form_contact{
+    width: 90%;
+  }
 }
 
 @media (max-width:400px){
@@ -181,7 +192,7 @@ a.link{
  }
 
 #apresentation{
-  width: 100vw;
+  max-width: 100vw;
   height: fit-content;
   display: flex;
   justify-content: space-around;
@@ -191,6 +202,8 @@ a.link{
 
 .ap_content{
   height: 400px;
+  min-width: 300px;
+  min-height: 400px;
   max-height: 400px;
   background: white;
   color: black;
@@ -208,4 +221,9 @@ a.link{
   align-items: center;
   text-align: center;
   flex-direction: column;
+  padding-top: 2rem;
+}
+
+.form_contact{
+  width: 50%;
 }

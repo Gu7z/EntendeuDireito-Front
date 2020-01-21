@@ -1,6 +1,6 @@
 import React from 'react'
-import computador from '../img/computador.png'
-import lupa from '../img/lupa.png'
+import computador from './img/computador.png'
+import lupa from './img/lupa.png'
 
 export default function Home() {
     return (
@@ -19,7 +19,7 @@ export default function Home() {
                 </div>
             </div>
 
-            <button type="button" class="btn btn-success" style={{width: '33%', height:'75px'}}>Começar agora</button>
+            <button type="button" class="btn btn-success" style={{width: '33%', height:'75px', marginBottom: '20px'}}>Começar agora</button>
         </div>
     )
 }
