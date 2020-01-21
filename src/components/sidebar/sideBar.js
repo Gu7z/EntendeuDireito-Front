@@ -2,11 +2,6 @@ import React from "react";
 import Sidebar from "react-sidebar";
 import SideButton from './sideButtons'
 
-export function sideBarContent(){
-    return(
-        <div>aaaaaaaaaaa</div>
-    )
-}
 export default function Side({isOpen, setOpen}){
     return(
         <Sidebar

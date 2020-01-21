@@ -4,7 +4,7 @@ import Nav from './components/nav'
 
 import DefaultPage from './components/defaultPage'
 
-import Planos_Cards from './components/planos_cards'
+import PlanosCards from './components/planos_cards'
 import Home from './components/home'
 import Contato from './components/contato'
 
@@ -14,7 +14,6 @@ import './App.css';
 import {
   BrowserView,
   MobileView,
-  isBrowser,
   isMobile
 } from "react-device-detect";
 
@@ -74,7 +73,7 @@ function App() {
             <strong> conteúdo importante</strong>.
           </>
         }
-        comp={<Planos_Cards isMobile={isMobile} planos={planos}></Planos_Cards>
+        comp={<PlanosCards isMobile={isMobile} planos={planos}></PlanosCards>
         }
       ></DefaultPage>
     )
