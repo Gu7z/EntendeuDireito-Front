@@ -41,7 +41,8 @@
   width: 100%;
   flex-grow: 1;
   padding-bottom: 50px;
-  background: black;
+  background-size: cover;
+  background: url('./components/img/banner3.png');
 }
 
 .main_mobile{
@@ -226,8 +227,4 @@ a.link{
   text-align: center;
   flex-direction: column;
   padding-top: 2rem;
-}
-
-.background2{
-  background: url('./components/img/banner2.jpg');
 }

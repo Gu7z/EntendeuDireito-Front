@@ -49,7 +49,6 @@ function App() {
   const RenderHome = () => {
     return (
       <DefaultPage
-        class = "main_mobile"
         title={'Aprenda tudo sobre conteúdo jurídico em minutos'}
         subtitle={'Aprenda tudo sobre conteúdo jurídico em minutos. Potencialize seu ensino e aprenda 45% mais com o nosso material ilustrativo que fala a língua que seu cérebro entende.'}
         comp={<Home></Home>}
