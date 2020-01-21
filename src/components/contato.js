@@ -3,7 +3,7 @@ import React from 'react'
 export default function Contato() {
     return (
         <div className="form_contact">
-            <form >
+            <form class="myform" >
                 <div className="form-group">
                     <label htmlFor="exampleFormControlInput1">Seu Email</label>
                     <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com" />

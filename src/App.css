@@ -150,6 +150,14 @@ a.link{
 }
 
 .form_contact{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.myform{
   width: 90%;
 }
 
@@ -164,12 +172,6 @@ a.link{
 
   #logo{
     justify-content: space-between;
-  }
-}
-
-@media(min-width:1024px){
-  .form_contact{
-    width: 90%;
   }
 }
 
@@ -224,4 +226,8 @@ a.link{
   text-align: center;
   flex-direction: column;
   padding-top: 2rem;
+}
+
+.background2{
+  background: url('./components/img/banner2.jpg');
 }
