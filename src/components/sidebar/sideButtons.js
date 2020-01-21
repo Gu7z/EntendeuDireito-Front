@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 
-export default function Footer(){
+export default function Footer({setOpen}){
     return(
-        <footer id="sideButton">
+        <footer onClick={()=>setOpen(false)} id="sideButton">
 
             <Link className="link link_button" to="/">
                 Sobre

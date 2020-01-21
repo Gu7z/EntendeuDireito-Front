@@ -1,6 +1,6 @@
 import React from "react";
 import Sidebar from "react-sidebar";
-import Footer from './sideButtons'
+import SideButton from './sideButtons'
 
 export function sideBarContent(){
     return(
@@ -12,7 +12,7 @@ export default function Side({isOpen, setOpen}){
         <Sidebar
             sidebar={
                 <div style={{ width: 175, height: '100%', display: 'flex' }}>
-                    <Footer></Footer>
+                    <SideButton setOpen={setOpen}></SideButton>
                 </div>
             }
             open={isOpen}
