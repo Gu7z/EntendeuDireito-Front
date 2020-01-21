@@ -236,3 +236,77 @@ a.link{
   max-height: 0;
 }
 
+#overlay{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#logCad{
+  display: flex;
+  flex-direction: column;
+  width: 375px;
+  height: 375px;
+  background: white;
+  border-radius: 15px;
+  color: black;
+}
+
+#topLogCad{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background: #E6E6E6;
+  height: 150px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+#topLogin{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 15px;
+}
+
+#topLogin:hover{
+  background: #D3D3D3;
+  cursor: pointer;
+}
+
+#topCad{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-top-right-radius: 15px;
+}
+
+#topCad:hover{
+  background: #D3D3D3;
+  cursor: pointer;
+}
+
+#logCad h3{
+  padding-top: 10px;
+}
+
+#logCad strong{
+  color: black;
+}
+
+#logCad form{
+  padding: 2% 10%;
+}
