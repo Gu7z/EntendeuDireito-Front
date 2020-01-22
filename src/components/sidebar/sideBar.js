@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Sidebar from "react-sidebar";
 import SideButton from './sideButtons'
 
