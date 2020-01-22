@@ -9,7 +9,7 @@ import Home from './components/home'
 import Login from './components/login'
 import Contato from './components/contato'
 
-import SideBar from './components/sidebar/sideBar'
+import Side from './components/sidebar/sideBar'
 import './App.css';
 
 import {
@@ -116,7 +116,7 @@ function App() {
       <Nav isMobile={true} isOpen={isOpen} setOpen={setOpen}></Nav>
       <div className={clss}>
 
-          <SideBar isOpen={isOpen} setOpen={setOpen}></SideBar>
+          <Side isOpen={isOpen} setOpen={setOpen}></Side>
 
           <Switch>
 
