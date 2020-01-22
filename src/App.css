@@ -266,7 +266,7 @@ a.link{
   flex-direction: row;
   justify-content: space-around;
   background: #E6E6E6;
-  height: 150px;
+  height: 75px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
