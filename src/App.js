@@ -38,7 +38,7 @@ function App() {
   ]
 
   const [isOpen, setOpen] = useState(false)
-  const [isOverlayed, setOverlay] = useState(true)
+  const [isOverlayed, setOverlay] = useState(false)
 
   var clss;
 
