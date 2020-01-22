@@ -18,7 +18,7 @@ export default function Nav({ removeCookie, setLogged, isLogged, isOpen, setOpen
 
             {logged ? (
                 <Link className="link" to='/home'>
-                    <div onClick={() => {removeCookie('isLogged'); removeCookie('token'); setLogged(false)}} className="button" style={{ color: 'black', display: 'flex', flexDirection: 'row' }}>
+                    <div onClick={() => {removeCookie('isLogged'); removeCookie('token'); setLogged(false); setOverlay(false)}} className="button" style={{ color: 'black', display: 'flex', flexDirection: 'row' }}>
                         <div>Logout</div>
                         <PersonIcon style={{ color: '#EA5412' }} textAnchor='Login'></PersonIcon>
                     </div>

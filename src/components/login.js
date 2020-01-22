@@ -36,8 +36,10 @@ export default function Login({ setCookie, setLogged, isOverlayed, setOverlay })
             setCookie('isLogged', true)
             setLogged(true)
             alert.success('Logado')
+            setOverlay(false)
         }else if (code === 666) {
             alert.success('Email enviado')
+            setLoginScreen(true)
         }
 
     }
@@ -45,7 +47,7 @@ export default function Login({ setCookie, setLogged, isOverlayed, setOverlay })
     function handleSubmit(e) {
         e.preventDefault()
         if (e.target.id == 'formLog') {
-            axios.post('http://localhost:3001/auth', {}, {
+            axios.post('https://entendeuback.herokuapp.com/auth', {}, {
                 auth: {
                     username: form_Values.email,
                     password: form_Values.password
@@ -58,7 +60,7 @@ export default function Login({ setCookie, setLogged, isOverlayed, setOverlay })
                 }
             )
         } else {
-            axios.post('http://localhost:3001/create', {}, {
+            axios.post('https://entendeuback.herokuapp.com/create', {}, {
                 auth: {
                     username: form_Values.email,
                     password: form_Values.password
@@ -68,6 +70,7 @@ export default function Login({ setCookie, setLogged, isOverlayed, setOverlay })
                 () => handleResponse(666)
             ).catch(
                 err => {
+                    console.log(err)
                     handleResponse(err.response.status)
                 }
             )

@@ -44,7 +44,7 @@ function App() {
   const [isOverlayed, setOverlay] = useState(false)
 
   const [cookies, setCookie, removeCookie] = useCookies(['name']);
-  const [isLogged, setLogged] = useState()
+  const [isLogged, setLogged] = useState(false)
 
   useEffect(()=>{
     setLogged(cookies.isLogged)
@@ -127,17 +127,16 @@ function App() {
       <Nav removeCookie={removeCookie} setLogged={setLogged} isLogged={isLogged} isMobile={isMobile} isOpen={isOpen} setOpen={setOpen} setOverlay={setOverlay} ></Nav>
       <div className={clss}>
 
+        {isOverlayed ? (<RenderLogin></RenderLogin>) : null }
+
         <BrowserView>
           <RenderHome></RenderHome>
           <RenderPlanos></RenderPlanos>
           <RenderContato></RenderContato>
-          {isOverlayed ? (<RenderLogin></RenderLogin>) : null }
         </BrowserView>
 
         <MobileView>
           <SideBar isOpen={isOpen} setOpen={setOpen}></SideBar>
-
-          {isOverlayed ? (<RenderLogin></RenderLogin>) : null }
 
           <Switch>
 
