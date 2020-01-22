@@ -2,16 +2,9 @@ import React, { useState } from 'react'
 import OutsideClickHandler from 'react-outside-click-handler';
 import FadeIn from 'react-fade-in'
 import axios from 'axios'
-import { positions, Provider, useAlert } from "react-alert";
-import AlertTemplate from "react-alert-template-basic";
+import { useAlert } from "react-alert";
 
-const options = {
-    timeout: 5000,
-    position: positions.BOTTOM_CENTER
-};
-
-
-export default function Login({ isOverlayed, setOverlay }) {
+export default function Login({ setCookie, setLogged, isOverlayed, setOverlay }) {
 
     //Nao posso usar o usestate por causa do overlay aparentemente
     const form_Values = {
@@ -24,10 +17,10 @@ export default function Login({ isOverlayed, setOverlay }) {
 
     const alert = useAlert()
 
-    function renderAlerts(code) {
+    function handleResponse(code, token) {
 
         if (code === 401) {
-            alert.error('Senha incorreta')
+            alert.error('Dados Invalidos')
         } else if (code === 403) {
             alert.error('Nao confirmou o email')
         } else if (code === 404) {
@@ -38,6 +31,13 @@ export default function Login({ isOverlayed, setOverlay }) {
             alert.error('Credenciais Invalidas')
         } else if (code === 502) {
             alert.error('Nao Foi possivel enviar o email, entre em contato!')
+        } else if (code === 200) {
+            setCookie('token', token)
+            setCookie('isLogged', true)
+            setLogged(true)
+            alert.success('Logado')
+        }else if (code === 666) {
+            alert.success('Email enviado')
         }
 
     }
@@ -51,10 +51,10 @@ export default function Login({ isOverlayed, setOverlay }) {
                     password: form_Values.password
                 }
             }).then(
-                response => console.log(response.data)
+                response => handleResponse(200, response.data)
             ).catch(
                 err => {
-                    renderAlerts(err.response.status)
+                    handleResponse(err.response.status)
                 }
             )
         } else {
@@ -64,10 +64,11 @@ export default function Login({ isOverlayed, setOverlay }) {
                     password: form_Values.password
                 }
             }).then(
-                data => console.log(data)
+                //666 - codigo para email enviado
+                () => handleResponse(666)
             ).catch(
                 err => {
-                    renderAlerts(err.response.status)
+                    handleResponse(err.response.status)
                 }
             )
         }

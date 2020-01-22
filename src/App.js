@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Switch, Route } from "react-router-dom";
+
 import Nav from './components/nav'
 
 import DefaultPage from './components/defaultPage'
@@ -17,6 +18,8 @@ import {
   MobileView,
   isMobile
 } from "react-device-detect";
+
+import { useCookies } from 'react-cookie';
 
 function App() {
   const planos = [
@@ -39,6 +42,13 @@ function App() {
 
   const [isOpen, setOpen] = useState(false)
   const [isOverlayed, setOverlay] = useState(false)
+
+  const [cookies, setCookie, removeCookie] = useCookies(['name']);
+  const [isLogged, setLogged] = useState()
+
+  useEffect(()=>{
+    setLogged(cookies.isLogged)
+  }, [cookies.isLogged])
 
   var clss;
 
@@ -107,14 +117,14 @@ function App() {
     return(
       <DefaultPage
         class='Login'
-        comp={ <Login isOverlayed={isOverlayed} setOverlay={setOverlay} ></Login> }
+        comp={ <Login setLogged={setLogged} setCookie={setCookie} isOverlayed={isOverlayed} setOverlay={setOverlay} ></Login> }
       ></DefaultPage>
     )
   }
 
   return (
     <div className="App">
-      <Nav isMobile={isMobile} isOpen={isOpen} setOpen={setOpen} setOverlay={setOverlay} ></Nav>
+      <Nav removeCookie={removeCookie} setLogged={setLogged} isLogged={isLogged} isMobile={isMobile} isOpen={isOpen} setOpen={setOpen} setOverlay={setOverlay} ></Nav>
       <div className={clss}>
 
         <BrowserView>

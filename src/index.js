@@ -8,6 +8,8 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { transitions, positions, Provider as AlertProvider } from 'react-alert'
 import AlertTemplate from 'react-alert-template-basic'
 
+import { CookiesProvider } from 'react-cookie';
+
 const options = {
     // you can also just use 'bottom center'
     position: positions.TOP_CENTER,
@@ -17,7 +19,19 @@ const options = {
     transition: transitions.SCALE
 }
 
-ReactDOM.render(<AlertProvider template={AlertTemplate} {...options}><Router><App/></Router></AlertProvider>, document.getElementById('root'));
+function Root(){
+    return(
+        <AlertProvider template={AlertTemplate} {...options}>
+            <CookiesProvider>
+                <Router>
+                    <App/>
+                </Router>
+            </CookiesProvider>
+        </AlertProvider>
+    )
+}
+
+ReactDOM.render(<Root/>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
