@@ -2,6 +2,14 @@ import React, { useState } from 'react'
 import OutsideClickHandler from 'react-outside-click-handler';
 import FadeIn from 'react-fade-in'
 import axios from 'axios'
+import { positions, Provider, useAlert } from "react-alert";
+import AlertTemplate from "react-alert-template-basic";
+
+const options = {
+    timeout: 5000,
+    position: positions.BOTTOM_CENTER
+};
+
 
 export default function Login({ isOverlayed, setOverlay }) {
 
@@ -14,46 +22,52 @@ export default function Login({ isOverlayed, setOverlay }) {
         form_Values[e.currentTarget.type] = e.target.value
     }
 
+    const alert = useAlert()
+
+    function renderAlerts(code) {
+
+        if (code === 401) {
+            alert.error('Senha incorreta')
+        } else if (code === 403) {
+            alert.error('Nao confirmou o email')
+        } else if (code === 404) {
+            alert.error('Nao Cadastrado')
+        } else if (code === 409) {
+            alert.error('Usuario ja existe')
+        } else if (code === 401) {
+            alert.error('Credenciais Invalidas')
+        } else if (code === 502) {
+            alert.error('Nao Foi possivel enviar o email, entre em contato!')
+        }
+
+    }
+
     function handleSubmit(e) {
         e.preventDefault()
-        if(e.target.id == 'formLog'){
+        if (e.target.id == 'formLog') {
             axios.post('http://localhost:3001/auth', {}, {
                 auth: {
                     username: form_Values.email,
                     password: form_Values.password
                 }
             }).then(
-                response=>console.log(response.data)
+                response => console.log(response.data)
             ).catch(
-                err=>{
-                    console.log(err.response.status)
-                    if(err.response.status === 401){
-                        console.log('Senha incorreta')
-                    }else if(err.response.status === 403){
-                        console.log('Nao confirmou o email')
-                    }else if(err.response.status === 404){
-                        console.log('Nao Cadastrado')
-                    }
+                err => {
+                    renderAlerts(err.response.status)
                 }
             )
-        }else{
+        } else {
             axios.post('http://localhost:3001/create', {}, {
                 auth: {
                     username: form_Values.email,
                     password: form_Values.password
                 }
             }).then(
-                data=>console.log(data)
+                data => console.log(data)
             ).catch(
-                err=>{
-                    console.log(err.response.status)
-                    if(err.response.status === 409){
-                        console.log('Usuario ja existe')
-                    }else if(err.response.status === 401){
-                        console.log('Credenciais Invalidas')
-                    }else if(err.response.status === 502){
-                        console.log('Nao Foi possivel enviar o email, entre em contato!')
-                    }
+                err => {
+                    renderAlerts(err.response.status)
                 }
             )
         }
@@ -96,7 +110,6 @@ export default function Login({ isOverlayed, setOverlay }) {
     }
 
     return (
-
         <div>
             {isOverlayed ? (
                 <div id="overlay">
