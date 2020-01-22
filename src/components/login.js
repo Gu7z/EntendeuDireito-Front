@@ -40,7 +40,6 @@ export default function Login({ isOverlayed, setOverlay }) {
                 <div class="form-group">
                     <label htmlFor="exampleInputPassword1">Senha</label>
                     <input type="password" onChange={change_values} class="form-control" id="exampleInputPassword1" />
-                    <small>A senha precisa ter no minimo 8 digitos</small>
                 </div>
                 <br />
                 <button class="btn" style={{ background: '#EA5412', color: 'white', marginBottom: '20px' }}>Entrar</button>
@@ -58,8 +57,8 @@ export default function Login({ isOverlayed, setOverlay }) {
                 <div class="form-group">
                     <label htmlFor="exampleInputPassword1">Senha</label>
                     <input type="password" class="form-control" id="exampleInputPassword1" />
+                    <small>A senha deve ter no minimo 8 digitos</small>
                 </div>
-                <br />
                 <button class="btn" style={{ background: '#EA5412', color: 'white', marginBottom: '20px' }}>Entrar</button>
             </form>
         )
