@@ -4,13 +4,7 @@ import SideButton from './sideButtons'
 
 export default function Side({isOpen, setOpen}){
 
-    var zidex
-
-    if (isOpen) {
-        zidex = 1
-    }else{
-        zidex = -1
-    }
+    var zidex = isOpen ? 1 : -1
 
     return(
         <Sidebar
@@ -21,7 +15,7 @@ export default function Side({isOpen, setOpen}){
             }
             open={isOpen}
             onSetOpen={setOpen}
-            styles={{ sidebar: { background: "white",position: 'fixed'}, root: {zIndex: zidex} }}
+            styles={{ sidebar: { background: "white",position: 'fixed'}, root: {zIndex: {zidex}} }}
             pullRight = {true}
         >
       </Sidebar>

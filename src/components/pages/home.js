@@ -1,6 +1,6 @@
 import React from 'react'
-import computador from './img/computador.png'
-import lupa from './img/lupa.png'
+import computador from '../img/computador.png'
+import lupa from '../img/lupa.png'
 
 export default function Home() {
     return (

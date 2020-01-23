@@ -6,7 +6,7 @@ import { useAlert } from "react-alert";
 
 export default function Login({ setCookie, setLogged, isOverlayed, setOverlay }) {
 
-    //Nao posso usar o usestate por causa do overlay aparentemente
+    //Nao posso usar o usestate por causa do overlay
     const form_Values = {
         email: '', password: ''
     }

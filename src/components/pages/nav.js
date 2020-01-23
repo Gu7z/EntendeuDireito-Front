@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from './img/logo.png'
+import logo from '../img/logo.png'
 import PersonIcon from '@material-ui/icons/Person';
 import MenuIcon from '@material-ui/icons/Menu';
 import { Link } from "react-router-dom";
